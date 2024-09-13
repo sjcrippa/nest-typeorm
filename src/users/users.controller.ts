@@ -19,7 +19,7 @@ export class UsersController {
   constructor(private userService: UsersService) {} // connecting with the services
 
   @Post()
-  createUser(@Body() newUser: CreateUserDto): Promise<User> {
+  createUser(@Body() newUser: CreateUserDto) {
     return this.userService.createUser(newUser);
   }
 
@@ -29,10 +29,8 @@ export class UsersController {
   }
 
   @Get(':id')
-  getUser(@Param('id', ParseIntPipe) id: number): Promise<User> {
+  getUser(@Param('id', ParseIntPipe) id: number) {
     // ParseIntPipe converts the type of the id to a number
-    console.log(id);
-    console.log(typeof id);
     return this.userService.getUser(id);
   }
 
