@@ -13,8 +13,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'localhost',
       port: 3306,
       database: 'nestdb',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // sincroniza las clases con la tabla en desarrollo, en prod usar una migracion.
+      entities: [__dirname + '/**/*.entity{.ts,.js}'], // any file with .entity will be upload at once.
+      synchronize: true, // synchronize all the classes with the table (for development, in prod must use migrations???)
     }),
     UsersModule,
   ],
